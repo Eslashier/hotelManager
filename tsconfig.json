@@ -16,6 +16,14 @@
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false
+    "noFallthroughCasesInSwitch": false,
+    "paths": {
+      "booking/*": ["./src/booking/*"],
+      "hotel/*": ["./src/hotel/*"],
+      "room/*": ["./src/room/*"],
+      "guest/*": ["./src/guest/*"],
+      "bookingForm/*": ["./src/booking-form/*"],
+      "shared/*": ["./src/shared/*"],
+    }
   }
 }

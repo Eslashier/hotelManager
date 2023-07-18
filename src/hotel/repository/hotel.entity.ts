@@ -1,32 +1,38 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 import { HotelInterface } from '../shared/interfaces/hotel.interface';
+import { RoomEntity } from 'room/repository/room.entity';
 
 @Entity({ name: 'hotel' })
 export class HotelEntity implements HotelInterface {
-  @PrimaryGeneratedColumn('uuid', { name: 'hotel_id' })
+  @PrimaryGeneratedColumn('uuid', { name: 'id' })
   id: string;
 
   @Column('text', {
     unique: true,
-    name: 'hotel_name',
+    name: 'name',
   })
   hotelName: string;
 
   @Column('float', {
     default: 0,
-    name: 'hotel_avg_price',
+    name: 'avg_price',
   })
   averagePrice: number;
 
   @Column('boolean', {
     unique: true,
-    name: 'hotel_enable',
+    name: 'enable',
   })
   enable: boolean;
 
   @Column('text', {
     unique: true,
-    name: 'hotel_city',
+    name: 'city',
   })
   city: string;
+
+  @OneToMany(() => RoomEntity, (roomEntity) => roomEntity.hotel, {
+    cascade: true,
+  })
+  rooms: RoomEntity[];
 }

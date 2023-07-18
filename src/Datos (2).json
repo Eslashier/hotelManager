@@ -1,0 +1,61 @@
+[
+  {
+    "User": {
+      "id": "string",
+      "email": "string"
+    }
+  },
+  {
+    "Hotel": {
+      "hotelName": "string",
+      "averagePrice": "number",
+      "rooms": "Room[]",
+      "enable": "boolean",
+      "city": "string"
+    }
+  },
+  {
+    "Booking": {
+      "id":"id",
+      "startDate": "date",
+      "endDate": "date",
+      "guestQuantity": "number"
+    }
+  },
+  {
+    "Room": {
+      "id":"id",
+      "price": "number",
+      "tax": "number",
+      "roomType": "roomType Enum",
+      "roomNumber": "number",
+      "enable": "booelan",
+      "booking": "Booking []"
+    }
+  },
+  //filtro de reservas histórico = fecha fin < hoy y filtro reserva actual fecha hoy < fecha fin
+  {
+    "Guest":{
+      "id":"id",
+      "name": "string",
+      "lastName": "string",
+      "birthDate": "date",
+      "gender": "string",
+      "documentType": "string",
+      "documentId": "string",
+      "email": "string",
+      "phone": "number",
+      "emergencyContactName": "string",
+      "emergencyContactPhone": "number"
+    }
+  },
+  {
+    "BookingForm": {
+      "id":"string",
+      "userEmail":"User.email",
+      "guest": "Guest[]",
+      "booking": "Booking",
+      "createdAt": "Date"
+    }
+  }
+]
