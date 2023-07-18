@@ -31,7 +31,7 @@ export class HotelEntity implements HotelInterface {
   })
   city: string;
 
-  @OneToMany(() => RoomEntity, (roomEntity) => roomEntity.hotel, {
+  @OneToMany(() => RoomEntity, (roomEntity) => roomEntity.id, {
     cascade: true,
   })
   rooms: RoomEntity[];

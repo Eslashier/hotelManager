@@ -25,7 +25,7 @@ export class CreateBookingFormTable1689640944140 implements MigrationInterface {
             type: 'uuid',
           },
           {
-            name: 'booking_id',
+            name: 'guest_id',
             type: 'uuid',
             isArray: true,
           },

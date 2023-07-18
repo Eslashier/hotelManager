@@ -37,13 +37,13 @@ export class RoomEntity implements RoomInterface {
   })
   enable: boolean;
 
-  @OneToMany(() => BookingEntity, (bookingEntity) => bookingEntity.room, {
+  @OneToMany(() => BookingEntity, (bookingEntity) => bookingEntity.id, {
     cascade: true,
   })
   @JoinColumn({ name: 'booking' })
   booking?: BookingEntity[];
 
-  @ManyToOne(() => HotelEntity, (hotelEntity) => hotelEntity.rooms)
+  @ManyToOne(() => HotelEntity, (hotelEntity) => hotelEntity.id)
   @JoinColumn({ name: 'hotel' })
   hotel?: HotelEntity;
 }

@@ -31,7 +31,7 @@ export class GuestEntity implements GuestInterface {
   })
   gender: genderEnum;
   @Column('text', {
-    name: 'gender',
+    name: 'document_type',
   })
   documentType: documentTypeEnum;
   @Column('text', {

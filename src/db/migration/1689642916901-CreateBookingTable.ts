@@ -22,7 +22,7 @@ export class CreateBookingTable1689642916901 implements MigrationInterface {
           },
           {
             name: 'guest_qty',
-            type: 'number',
+            type: 'int',
           },
           {
             name: 'booking_id',
